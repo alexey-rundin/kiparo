@@ -1,6 +1,6 @@
-package ru.homework.service;
+package com.kiparo.homework.service;
 
-import ru.homework.model.NewsItem;
+import com.kiparo.homework.model.NewsItem;
 
 import java.util.List;
 

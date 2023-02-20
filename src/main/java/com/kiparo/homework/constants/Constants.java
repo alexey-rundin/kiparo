@@ -1,4 +1,4 @@
-package ru.homework.constants;
+package com.kiparo.homework.constants;
 
 /**
  * @author Alexey Rundin

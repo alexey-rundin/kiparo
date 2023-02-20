@@ -1,4 +1,4 @@
-package ru.homework.model;
+package com.kiparo.homework.model;
 
 import com.google.gson.annotations.SerializedName;
 import jakarta.xml.bind.annotation.XmlAccessType;
@@ -6,6 +6,7 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -14,7 +15,7 @@ import java.util.List;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @Data
-public class Keywords {
+public class Keywords implements Serializable {
     @XmlElement(name = "element")
     @SerializedName("keywords")
     private List<String> keywordsList;

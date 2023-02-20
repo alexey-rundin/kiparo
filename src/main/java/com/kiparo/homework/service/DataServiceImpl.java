@@ -1,9 +1,11 @@
-package ru.homework.service;
+package com.kiparo.homework.service;
 
-import ru.homework.model.NewsItem;
+import com.kiparo.homework.model.NewsItem;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author Alexey Rundin
@@ -15,7 +17,10 @@ public class DataServiceImpl implements DataService {
     @Override
     public List<NewsItem> getNewsData() {
         if (!this.newsItemsData.isEmpty()) {
-            return this.newsItemsData;
+            return this.newsItemsData
+                    .stream()
+                    .sorted(Comparator.comparingInt(NewsItem::getId))
+                    .collect(Collectors.toList());
         }
         return new ArrayList<>();
     }

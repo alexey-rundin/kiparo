@@ -1,4 +1,4 @@
-package ru.homework.service;
+package com.kiparo.homework.service;
 
 import java.io.IOException;
 

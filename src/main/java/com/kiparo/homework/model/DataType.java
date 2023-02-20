@@ -1,6 +1,6 @@
-package ru.homework.model;
+package com.kiparo.homework.model;
 
-import ru.homework.constants.Constants;
+import com.kiparo.homework.constants.Constants;
 
 /**
  * @author Alexey Rundin

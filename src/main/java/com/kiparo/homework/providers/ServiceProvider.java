@@ -1,8 +1,8 @@
-package ru.homework.providers;
+package com.kiparo.homework.providers;
 
-import ru.homework.service.DataService;
-import ru.homework.service.DownloadService;
-import ru.homework.service.FindService;
+import com.kiparo.homework.service.FindService;
+import com.kiparo.homework.service.DataService;
+import com.kiparo.homework.service.DownloadService;
 
 /**
  * @author Alexey Rundin

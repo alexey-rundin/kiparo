@@ -1,6 +1,6 @@
-package ru.homework.service;
+package com.kiparo.homework.service;
 
-import ru.homework.model.NewsItem;
+import com.kiparo.homework.model.NewsItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,12 @@ public class FindServiceImpl implements FindService {
         List<NewsItem> newsData = dataService.getNewsData();
 
         List<NewsItem> filteredData = new ArrayList<>();
-        newsData.forEach(item -> item.getKeywords().getKeywordsList().stream().filter(keyItem -> keyItem.equals(keyword)).map(keyItem -> item).forEach(filteredData::add));
+        newsData.forEach(item ->
+                item.getKeywordsList()
+                        .stream()
+                        .filter(keyItem -> keyItem.equals(keyword))
+                        .map(keyItem -> item)
+                        .forEach(filteredData::add));
 
         return filteredData;
     }

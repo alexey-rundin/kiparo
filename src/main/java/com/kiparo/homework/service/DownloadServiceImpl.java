@@ -1,4 +1,4 @@
-package ru.homework.service;
+package com.kiparo.homework.service;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

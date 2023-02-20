@@ -1,5 +1,7 @@
-package ru.homework.providers;
+package com.kiparo.homework.providers;
 
+import com.kiparo.homework.service.*;
+import ru.homework.kiparo.service.*;
 import ru.homework.service.*;
 
 /**
