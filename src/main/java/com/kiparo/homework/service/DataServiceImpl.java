@@ -10,6 +10,7 @@ import jakarta.xml.bind.Unmarshaller;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -78,13 +79,10 @@ public class DataServiceImpl implements DataService {
 
     private void print(List<NewsItem> printItems) {
         if (!printItems.isEmpty()) {
+            Collections.sort(printItems);
             for (NewsItem item : printItems) {
                 System.out.println("-------------------------------");
-                System.out.println("ID: " + item.getId());
-                System.out.println("Дата: " + item.getDate());
-                System.out.println("Заголовок: " + item.getTitle());
-                System.out.println("Описание: " + item.getDescription());
-                System.out.println("Поисковые теги: " + item.getKeywords());
+                System.out.println(item);
             }
         } else {
             System.out.println("Что-то пошло не так. Данные отсутствуют.");

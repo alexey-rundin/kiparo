@@ -25,7 +25,6 @@ public class Main {
         System.out.print("Нажмите 1 что-бы скачать JSON, 2 - XML: ");
         downloader(scanner);
 
-
         System.out.print("1 - вывести все новости, 2 - поиск по keyword. Введите 1 или 2: ");
         printerWithFinder(scanner);
     }
