@@ -4,39 +4,33 @@ import com.google.gson.annotations.SerializedName;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlElementWrapper;
 import lombok.Data;
 
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * @author Alexey Rundin
- * @since 20.02.2023
- */
-@XmlRootElement(name = "element")
-@XmlAccessorType(XmlAccessType.FIELD)
 @Data
+@XmlAccessorType(XmlAccessType.FIELD)
 public class NewsItem implements Serializable {
-
-    @SerializedName("date")
-    private String date;
-
-    @SerializedName("description")
-    private String description;
 
     @SerializedName("id")
     private int id;
 
-    private Keywords keywordsObj;
+    @SerializedName("date")
+    private String date;
 
     @SerializedName("title")
     private String title;
 
+    @SerializedName("description")
+    private String description;
+
+    @SerializedName("keywords")
+    @XmlElementWrapper(name = "keywords")
+    @XmlElement(name = "element")
+    private List<String> keywords;
+
     @SerializedName("visible")
     private boolean visible;
-
-    @XmlElement(name = "element")
-    @SerializedName("keywords")
-    private List<String> keywordsList;
 }

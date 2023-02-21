@@ -23,6 +23,34 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Нажмите 1 что-бы скачать JSON, 2 - XML: ");
+        downloader(scanner);
+
+
+        System.out.print("1 - вывести все новости, 2 - поиск по keyword. Введите 1 или 2: ");
+        printerWithFinder(scanner);
+    }
+
+    private static void printerWithFinder(Scanner scanner) {
+        int selector = scanner.nextInt();
+        switch (selector) {
+            case 1: {
+                System.out.println("Выводим все новости");
+                dataService.printAllNews();
+                break;
+            }
+            case 2: {
+                System.out.println("Поиск по keyword");
+                System.out.print("Введите ключевое слово для поиска: ");
+                String keyword = scanner.next();
+                dataService.findAndPrintNewsByKeyword(keyword);
+                break;
+            }
+            default:
+                System.out.println("Введите 1 или 2.");
+        }
+    }
+
+    private static void downloader(Scanner scanner) {
         int selectedFileType = scanner.nextInt();
         switch (selectedFileType) {
             case 1: {
@@ -51,26 +79,6 @@ public class Main {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                break;
-            }
-            default:
-                System.out.println("Введите 1 или 2.");
-        }
-
-
-        System.out.print("1 - вывести все новости, 2 - поиск по keyword. Введите 1 или 2: ");
-        int selector = scanner.nextInt();
-        switch (selector) {
-            case 1: {
-                System.out.println("Выводим все новости");
-                dataService.printAllNews();
-                break;
-            }
-            case 2: {
-                System.out.println("Поиск по keyword");
-                System.out.print("Введите ключевое слово для поиска: ");
-                String keyword = scanner.nextLine();
-                dataService.findAndPrintNewsByKeyword(keyword);
                 break;
             }
             default:

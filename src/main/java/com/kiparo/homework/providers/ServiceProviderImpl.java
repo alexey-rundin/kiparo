@@ -1,8 +1,9 @@
 package com.kiparo.homework.providers;
 
-import com.kiparo.homework.service.*;
-import ru.homework.kiparo.service.*;
-import ru.homework.service.*;
+import com.kiparo.homework.service.DataService;
+import com.kiparo.homework.service.DataServiceImpl;
+import com.kiparo.homework.service.DownloadService;
+import com.kiparo.homework.service.DownloadServiceImpl;
 
 /**
  * @author Alexey Rundin
@@ -17,10 +18,5 @@ public class ServiceProviderImpl implements ServiceProvider {
     @Override
     public DataService getDataService() {
         return new DataServiceImpl();
-    }
-
-    @Override
-    public FindService getFindService(DataService dataService) {
-        return new FindServiceImpl(dataService);
     }
 }
